@@ -1,0 +1,47 @@
+        .hidden-meaning {
+        visibility: hidden;
+        }
+        .visible-meaning {
+        visibility: visible;
+        transition: visibility 0.3s ease-in;
+        }
+
+
+     
+        /* Responsive table wrapper for phones */
+        .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        }
+
+        /* Optional: Make inputs look better on mobile */
+        input {
+        width: 100%;
+        min-width: 100px;
+        font-size: 16px;
+        padding: 8px;
+        box-sizing: border-box;
+        }
+
+
+
+        #nextBtn {
+        position: fixed;
+        bottom: 20px;       /* Distance from bottom */
+        right: 20px;        /* Distance from right */
+        padding: 12px 24px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        }
+
+        #nextBtn:active {
+        background-color: #0056b3;
+        }
+
+
+

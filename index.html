@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Phrase Practice</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/syle.css">
+    </head>
+
+    <body>
+
+        <div class="container mt-5">
+                                                            <!-- Heading -->
+            <h3 class="text-center mb-4">Phrase Matching Practice</h3>
+
+                                                            <!-- A -->
+
+            <div class="table-responsive">
+                <button onclick="showNextMeaning()" id="nextBtn" style="margin: 10px; padding: 10px 20px;">Next</button>
+
+                <table class="table table-bordered table-striped bg-light">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Phrase</th>
+                        <th>Meaning</th>
+                        <th>Your Answer</th>
+                    </tr>
+                    </thead>
+                    <tbody id="phrase-table">
+                        <tr><td>ABC</td><td class="meaning hidden-meaning">প্রাথমিক জ্ঞান</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>All in all</td><td class="meaning hidden-meaning">সর্বেসর্বা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Above all</td><td class="meaning hidden-meaning">সর্বোপরি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At a loss</td><td class="meaning hidden-meaning">হতবুদ্ধি/কিংকর্তব্যবিমূঢ়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At home in</td><td class="meaning hidden-meaning">দক্ষ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>After all</td><td class="meaning hidden-meaning">সবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>As it were</td><td class="meaning hidden-meaning">যেন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>As if</td><td class="meaning hidden-meaning">যেন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At daggers drawn</td><td class="meaning hidden-meaning">শত্রুভাবাপন্ন/খড়গহস্ত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At once</td><td class="meaning hidden-meaning">অবিলম্বে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At home</td><td class="meaning hidden-meaning">স্বাচ্ছন্দ্য বোধ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>All on a sudden</td><td class="meaning hidden-meaning">হঠাৎ করে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At one's wit's end</td><td class="meaning hidden-meaning">হতবুদ্ধি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At last</td><td class="meaning hidden-meaning">অবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At stake</td><td class="meaning hidden-meaning">বিপন্ন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At least</td><td class="meaning hidden-meaning">অন্তত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At sixes and sevens</td><td class="meaning hidden-meaning">এলোমেলো</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At all</td><td class="meaning hidden-meaning">মোটের উপর/আদৌ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Apple of discord</td><td class="meaning hidden-meaning">বিবাদের কারণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>As usual</td><td class="meaning hidden-meaning">সর্বদা যেমন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At large</td><td class="meaning hidden-meaning">মুক্তভাবে ঘোরাফেরা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At a stretch</td><td class="meaning hidden-meaning">একটানা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At random</td><td class="meaning hidden-meaning">এলোমেলোভাবে, উদ্দেশ্য বিহীনভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At the eleventh hour</td><td class="meaning hidden-meaning">শেষ মুহূর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>A bed of roses</td><td class="meaning hidden-meaning">সুখময় জীবন নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>A slow coach</td><td class="meaning hidden-meaning">ধীর গতির ব্যক্তি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>All along</td><td class="meaning hidden-meaning">শুরু থেকে শেষ পর্যন্ত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>A rainy day</td><td class="meaning hidden-meaning">দুর্দিনের জন্য সংরক্ষণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>A black sheep</td><td class="meaning hidden-meaning">কুলাঙ্গার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At length</td><td class="meaning hidden-meaning">অবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>A man of letters</td><td class="meaning hidden-meaning">পাণ্ডিত্যের মানুষ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At a glance</td><td class="meaning hidden-meaning">একনজরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>At the top of</td><td class="meaning hidden-meaning">সর্বোচ্চ কণ্ঠে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>All the same</td><td class="meaning hidden-meaning">তবুও একই কথা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>All and sundry</td><td class="meaning hidden-meaning">সবাই</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>As to</td><td class="meaning hidden-meaning">সম্পর্কে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>As well as</td><td class="meaning hidden-meaning">তেমনিভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>As soon as</td><td class="meaning hidden-meaning">যেমন দ্রুত সম্ভব</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>According to</td><td class="meaning hidden-meaning">অনুযায়ী</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                    </tbody>
+                </table>
+
+            </div>
+                                       
+
+                                                            <!-- B-H -->
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-striped bg-light">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Phrase</th>
+                        <th>Meaning</th>
+                        <th>Your Answer</th>
+                    </tr>
+                    </thead>
+                    <tbody id="phrase-table">
+                            
+                        <tr><td>Bring to mind</td><td class="meaning hidden-meaning">স্মৃতিতে আনা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>By heart</td><td class="meaning hidden-meaning">মনে রাখা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>By turns</td><td class="meaning hidden-meaning">পরপর</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>By this time</td><td class="meaning hidden-meaning">এই সময়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Body and soul together</td><td class="meaning hidden-meaning">সম্পূর্ণ শরীর ও মন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Beyond measure</td><td class="meaning hidden-meaning">অপরিমেয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Beyond question</td><td class="meaning hidden-meaning">সন্দেহাতীত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Cock and bull story</td><td class="meaning hidden-meaning">মিথ্যা গল্প</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Cold reception</td><td class="meaning hidden-meaning">অন্তরিকতাহীন স্বাগত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Crying need</td><td class="meaning hidden-meaning">অত্যাবশ্যক প্রয়োজন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Capital punishment</td><td class="meaning hidden-meaning">মৃত্যুদণ্ড</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Crocodile tears</td><td class="meaning hidden-meaning">ভুয়া কান্না</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Call to mind</td><td class="meaning hidden-meaning">স্মরণ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Come to light</td><td class="meaning hidden-meaning">প্রকাশ পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Come of age</td><td class="meaning hidden-meaning">বয়ঃসন্ধিতে পৌঁছানো</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Call in question</td><td class="meaning hidden-meaning">প্রশ্ন করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Cats and dogs</td><td class="meaning hidden-meaning">ঝড়ো বৃষ্টি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Carry the day</td><td class="meaning hidden-meaning">জয়লাভ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Catch red handed</td><td class="meaning hidden-meaning">অপরাধের সময় ধরা পড়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Call names</td><td class="meaning hidden-meaning">অপমান করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Care for</td><td class="meaning hidden-meaning">যত্ন নেওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Cut off</td><td class="meaning hidden-meaning">কাটিয়ে ফেলা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Close to</td><td class="meaning hidden-meaning">নিকটবর্তী</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Carry on</td><td class="meaning hidden-meaning">চালিয়ে যাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Carry out</td><td class="meaning hidden-meaning">সম্পাদন করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Dead of night</td><td class="meaning hidden-meaning">রাত্রির নীরবতা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Dead language</td><td class="meaning hidden-meaning">মৃত ভাষা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Dead against</td><td class="meaning hidden-meaning">পুরোপুরি বিপরীত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Day after day</td><td class="meaning hidden-meaning">দিনদিন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Dead letter</td><td class="meaning hidden-meaning">অকার্যকর আইন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Dark horse</td><td class="meaning hidden-meaning">অজ্ঞাত প্রতিযোগী</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Double game</td><td class="meaning hidden-meaning">দ্বৈতচরিত্র</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>End in smoke</td><td class="meaning hidden-meaning">বাতিল হওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Every now and then</td><td class="meaning hidden-meaning">মাঝে মাঝে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Ever and anon</td><td class="meaning hidden-meaning">অবিরাম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>From A to Z</td><td class="meaning hidden-meaning">সম্পূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>From hand to mouth</td><td class="meaning hidden-meaning">কঠিন জীবনযাপন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>For good</td><td class="meaning hidden-meaning">চিরকালীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Far and wide</td><td class="meaning hidden-meaning">দেশব্যাপী</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Fish out of water</td><td class="meaning hidden-meaning">অস্বস্তিকর অবস্থা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Flesh and blood</td><td class="meaning hidden-meaning">কোন প্রাণিকেই এত অপমান সহ্য করা যায় না</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Far and near</td><td class="meaning hidden-meaning">দূর-দূরান্ত থেকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>From time to time</td><td class="meaning hidden-meaning">মাঝে মাঝে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>From bad to worse</td><td class="meaning hidden-meaning">খারাপ থেকে আরও খারাপ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Face to face</td><td class="meaning hidden-meaning">সরাসরি মুখোমুখি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Fair play</td><td class="meaning hidden-meaning">ন্যায্য খেলা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Find fault with</td><td class="meaning hidden-meaning">খুঁত খুঁজে পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>For the time being</td><td class="meaning hidden-meaning">আপাতত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>For the sake of</td><td class="meaning hidden-meaning">জন্যে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>For fear of</td><td class="meaning hidden-meaning">ভয়ের কারণে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>For want of</td><td class="meaning hidden-meaning">অভাবের কারণে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Feel at home</td><td class="meaning hidden-meaning">স্বাচ্ছন্দ্য বোধ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>For an instant</td><td class="meaning hidden-meaning">অল্প সময়ের জন্য</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>From top to bottom</td><td class="meaning hidden-meaning">গোটা ব্যাপারে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>From time immemorial</td><td class="meaning hidden-meaning">অতিপ্রাচীনকাল থেকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>Get rid of</td><td class="meaning hidden-meaning">মুক্তি পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Get by heart</td><td class="meaning hidden-meaning">মুখস্থ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Get out</td><td class="meaning hidden-meaning">বের হয়ে যাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Get back</td><td class="meaning hidden-meaning">ফিরে পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Give up</td><td class="meaning hidden-meaning">ত্যাগ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Go to the dogs</td><td class="meaning hidden-meaning">ধ্বংসের পথে যাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Go through</td><td class="meaning hidden-meaning">পরীক্ষা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>Hard and fast</td><td class="meaning hidden-meaning">কঠোর ও স্থির</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Heart and soul</td><td class="meaning hidden-meaning">সম্পূর্ণ মনোযোগ দিয়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Hard time</td><td class="meaning hidden-meaning">কঠিন সময়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Head and tail</td><td class="meaning hidden-meaning">শুরু থেকে শেষ পর্যন্ত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>High time</td><td class="meaning hidden-meaning">সময় এসেছে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Hale and healthy</td><td class="meaning hidden-meaning">সুস্থ ও সবল</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Hit upon</td><td class="meaning hidden-meaning">হঠাৎ কোনো আইডিয়া পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Hand in hand</td><td class="meaning hidden-meaning">হাত ধরাধরি করে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Hue and cry</td><td class="meaning hidden-meaning">তীব্র চিৎকার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        
+    
+    
+                    </tbody>
+    
+                </table>
+
+            </div>
+            
+
+                                                            <!-- I-K -->
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-striped bg-light">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Phrase</th>
+                        <th>Meaning</th>
+                        <th>Your Answer</th>
+                    </tr>
+                    </thead>
+                    <tbody id="phrase-table">
+                        <tr><td>In a body</td><td class="meaning hidden-meaning">সকলেই মিলে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In details</td><td class="meaning hidden-meaning">বিশদভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In case</td><td class="meaning hidden-meaning">যদি ঘটে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In lieu of</td><td class="meaning hidden-meaning">পরিবর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In a fix</td><td class="meaning hidden-meaning">সমস্যায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In respect of</td><td class="meaning hidden-meaning">সম্পর্কে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In good faith</td><td class="meaning hidden-meaning">বিশ্বাস করে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In the twinkling of an eye</td><td class="meaning hidden-meaning">এক পলকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In order to</td><td class="meaning hidden-meaning">জন্য</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>In the long run</td><td class="meaning hidden-meaning">দীর্ঘ সময় পরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Instead of</td><td class="meaning hidden-meaning">পরিবর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In vogue</td><td class="meaning hidden-meaning">প্রচলিত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In honour of</td><td class="meaning hidden-meaning">সম্মানে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In a word</td><td class="meaning hidden-meaning">সংক্ষেপে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In front of</td><td class="meaning hidden-meaning">সামনের দিকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In favour of</td><td class="meaning hidden-meaning">পক্ষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In full</td><td class="meaning hidden-meaning">সম্পূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In fine</td><td class="meaning hidden-meaning">সংক্ষেপে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In spite of</td><td class="meaning hidden-meaning">সত্ত্বেও</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In view of</td><td class="meaning hidden-meaning">বিবেচনায় নিয়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In the dark</td><td class="meaning hidden-meaning">অজ্ঞাত অবস্থায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In cold blood</td><td class="meaning hidden-meaning">ঠাণ্ডা মাথায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In no time</td><td class="meaning hidden-meaning">খুব দ্রুত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In a nutshell</td><td class="meaning hidden-meaning">সংক্ষিপ্তভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In a hurry</td><td class="meaning hidden-meaning">তাড়াতাড়ি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In the meantime</td><td class="meaning hidden-meaning">এদিকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Irony of fate</td><td class="meaning hidden-meaning">দুর্ভাগ্যের পরিহাস</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In broad day light</td><td class="meaning hidden-meaning">প্রকাশ্য দিবালোকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In full swing</td><td class="meaning hidden-meaning">পূর্ণ কার্যক্রমে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In the nick of time</td><td class="meaning hidden-meaning">সঠিক সময়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In behalf of</td><td class="meaning hidden-meaning">পরিবারের পক্ষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In connection with</td><td class="meaning hidden-meaning">সম্পর্কে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In the guise of</td><td class="meaning hidden-meaning">ছদ্মবেশে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In the hope of</td><td class="meaning hidden-meaning">আশায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In consequence of</td><td class="meaning hidden-meaning">ফলস্বরূপ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In quest of</td><td class="meaning hidden-meaning">অনুসন্ধানে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In consideration of</td><td class="meaning hidden-meaning">বিবেচনায় রেখে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In course of</td><td class="meaning hidden-meaning">সময়ের সাথে সাথে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In the end</td><td class="meaning hidden-meaning">অবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In harmony with</td><td class="meaning hidden-meaning">সামঞ্জস্যপূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Ins and outs</td><td class="meaning hidden-meaning">সম্পূর্ণ বিবরণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In season and out of season</td><td class="meaning hidden-meaning">সাময়িক ও অপ্রাসঙ্গিকভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In bloom</td><td class="meaning hidden-meaning">ফুল ফোটা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In capable of</td><td class="meaning hidden-meaning">অক্ষম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Incline to</td><td class="meaning hidden-meaning">প্রবণ হওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>In fact</td><td class="meaning hidden-meaning">বাস্তবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Insist on</td><td class="meaning hidden-meaning">দৃঢ়ভাবে দাবী করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>Jack of all trades</td><td class="meaning hidden-meaning">সকল কাজে দক্ষ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Jump to</td><td class="meaning hidden-meaning">দ্রুত সিদ্ধান্ত নেয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>Key to</td><td class="meaning hidden-meaning">সমাধানের চাবিকাঠি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Knock at</td><td class="meaning hidden-meaning">দরজায় কড়া নাড়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                    </tbody>
+                </table>
+
+            </div>
+
+                                                            <!-- O-R -->
+            
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-striped bg-light">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Phrase</th>
+                        <th>Meaning</th>
+                        <th>Your Answer</th>
+                    </tr>
+                    </thead>
+                    <tbody id="phrase-table">
+                        <tr><td>Out of sorts</td><td class="meaning hidden-meaning">অসুস্থ বোধ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On the eve of</td><td class="meaning hidden-meaning">আগামীদিনের পূর্বে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On account of</td><td class="meaning hidden-meaning">কারণে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On the ground of</td><td class="meaning hidden-meaning">ভিত্তিতে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On an average</td><td class="meaning hidden-meaning">গড়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On the point of</td><td class="meaning hidden-meaning">সংশ্লিষ্ট</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On the contrary</td><td class="meaning hidden-meaning">পরিবর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On the whole</td><td class="meaning hidden-meaning">মোটকথা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On good terms</td><td class="meaning hidden-meaning">ভালো সম্পর্ক</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On no account</td><td class="meaning hidden-meaning">অবশ্যই নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>On the part of</td><td class="meaning hidden-meaning">দিক থেকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On a large scale</td><td class="meaning hidden-meaning">বড় পরিসরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On easy terms</td><td class="meaning hidden-meaning">সহজ শর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On the other hand</td><td class="meaning hidden-meaning">অন্যদিকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On the plea of</td><td class="meaning hidden-meaning">অজুহাতে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>On and on</td><td class="meaning hidden-meaning">অবিরাম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out and out</td><td class="meaning hidden-meaning">সম্পূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of work</td><td class="meaning hidden-meaning">বেকার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of employment</td><td class="meaning hidden-meaning">চাকরি হারানো</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of date</td><td class="meaning hidden-meaning">পুরানো</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>Out of fashion</td><td class="meaning hidden-meaning">আউটডেট</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of question</td><td class="meaning hidden-meaning">সম্ভব নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of order</td><td class="meaning hidden-meaning">অসাধু</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of doors</td><td class="meaning hidden-meaning">বাহিরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of print</td><td class="meaning hidden-meaning">মুদ্রণ বন্ধ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Out of stock</td><td class="meaning hidden-meaning">মজুদ নেই</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Of course</td><td class="meaning hidden-meaning">অবশ্যই</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Of late</td><td class="meaning hidden-meaning">সম্প্রতি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Off and on</td><td class="meaning hidden-meaning">অনিয়মিতভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Off one's head</td><td class="meaning hidden-meaning">পাগল</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>Once upon a time</td><td class="meaning hidden-meaning">এক সময়ের কথা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Pros and cons</td><td class="meaning hidden-meaning">সুবিধা ও অসুবিধা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Part and parcel</td><td class="meaning hidden-meaning">অঙ্গাঙ্গী অংশ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Proud of</td><td class="meaning hidden-meaning">গর্বিত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Play false</td><td class="meaning hidden-meaning">মিথ্যা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Pick a quarrel with</td><td class="meaning hidden-meaning">বিবাদ সৃষ্টি করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Point blank</td><td class="meaning hidden-meaning">পরোক্ষভাবে নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Play tricks</td><td class="meaning hidden-meaning">প্রতারণা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                        <tr><td>Red letter day</td><td class="meaning hidden-meaning">বিশেষ দিন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Rag day</td><td class="meaning hidden-meaning">শিক্ষার শেষ আনন্দের দিন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                        <tr><td>Red handed</td><td class="meaning hidden-meaning">সকলে হাতেনাতে</td><td><input type="text" class="form-control user-input" /></td></tr>
+    
+                    </tbody>
+                </table>
+
+            </div>
+
+
+                                                            <!-- S-W -->
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-striped bg-light">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Phrase</th>
+                        <th>Meaning</th>
+                        <th>Your Answer</th>
+                    </tr>
+                    </thead>
+                    <tbody id="phrase-table">
+                    <tr><td>Safe and sound</td><td class="meaning hidden-meaning">নিরাপদ ও অক্ষত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Sum and substance</td><td class="meaning hidden-meaning">সারমর্ম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Skin and bone</td><td class="meaning hidden-meaning">অতি রুগ্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Short cut</td><td class="meaning hidden-meaning">সহজ উপায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Small fry</td><td class="meaning hidden-meaning">তুচ্ছ ব্যক্তি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Slow coach</td><td class="meaning hidden-meaning">ধীর ব্যক্তি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>So to say</td><td class="meaning hidden-meaning">এ যেন বলা যায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Stone's throw</td><td class="meaning hidden-meaning">খুব নিকটে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>So so / So and so</td><td class="meaning hidden-meaning">মোটামুটি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>So to speak</td><td class="meaning hidden-meaning">এ যেন বলা যায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Such and such</td><td class="meaning hidden-meaning">এই জাতীয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Slow and steady</td><td class="meaning hidden-meaning">ধীরে কিন্তু স্থিরভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Step by step</td><td class="meaning hidden-meaning">ধাপে ধাপে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Summer friends</td><td class="meaning hidden-meaning">স্বার্থান্বেষী বন্ধু</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>A slip of the pen</td><td class="meaning hidden-meaning">কলমের ভুল</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>A slip of the tongue</td><td class="meaning hidden-meaning">কথার ভুল</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Take to heart</td><td class="meaning hidden-meaning">মনে গ্রহণ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Take one to task</td><td class="meaning hidden-meaning">ভর্ৎসনা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Through and through</td><td class="meaning hidden-meaning">পুরোপুরি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Thankless task</td><td class="meaning hidden-meaning">অকৃতজ্ঞ কাজ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Time and again</td><td class="meaning hidden-meaning">ঘন ঘন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>To the brim</td><td class="meaning hidden-meaning">চূড়ান্ত পর্যায়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>To the backbone</td><td class="meaning hidden-meaning">সম্পূর্ণভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>To and fro</td><td class="meaning hidden-meaning">এদিক ওদিক</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Take place</td><td class="meaning hidden-meaning">ঘটা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Take pity on</td><td class="meaning hidden-meaning">দয়া করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Take time</td><td class="meaning hidden-meaning">সময় লাগা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Take care of</td><td class="meaning hidden-meaning">যত্ন নেওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>The rest of</td><td class="meaning hidden-meaning">বাকি অংশ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Ups and downs</td><td class="meaning hidden-meaning">উত্থান-পতন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Under lock and key</td><td class="meaning hidden-meaning">তালাবদ্ধ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Up and down</td><td class="meaning hidden-meaning">উর্ধ্ব-নিম্নভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Up to date</td><td class="meaning hidden-meaning">আধুনিক</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Under consideration</td><td class="meaning hidden-meaning">বিবেচনাধীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Under construction</td><td class="meaning hidden-meaning">নির্মাণাধীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Under trial</td><td class="meaning hidden-meaning">বিচারাধীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Victim of</td><td class="meaning hidden-meaning">শিকার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Vie with</td><td class="meaning hidden-meaning">প্রতিযোগিতা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Weal and woe</td><td class="meaning hidden-meaning">সুখ-দুঃখ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    </tbody>
+                </table>
+
+            </div>
+=======
+            <table class="table table-bordered table-striped bg-light">
+                <thead class="table-dark">
+                <tr>
+                    <th>Phrase</th>
+                    <th>Meaning</th>
+                    <th>Your Answer</th>
+                </tr>
+                </thead>
+                <tbody id="phrase-table">
+                    <tr><td>ABC</td><td class="meaning hidden-meaning">প্রাথমিক জ্ঞান</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>All in all</td><td class="meaning hidden-meaning">সর্বেসর্বা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Above all</td><td class="meaning hidden-meaning">সর্বোপরি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At a loss</td><td class="meaning hidden-meaning">হতবুদ্ধি/কিংকর্তব্যবিমূঢ়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At home in</td><td class="meaning hidden-meaning">দক্ষ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>After all</td><td class="meaning hidden-meaning">সবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>As it were</td><td class="meaning hidden-meaning">যেন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>As if</td><td class="meaning hidden-meaning">যেন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At daggers drawn</td><td class="meaning hidden-meaning">শত্রুভাবাপন্ন/খড়গহস্ত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At once</td><td class="meaning hidden-meaning">অবিলম্বে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At home</td><td class="meaning hidden-meaning">স্বাচ্ছন্দ্য বোধ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>All on a sudden</td><td class="meaning hidden-meaning">হঠাৎ করে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At one's wit's end</td><td class="meaning hidden-meaning">হতবুদ্ধি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At last</td><td class="meaning hidden-meaning">অবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At stake</td><td class="meaning hidden-meaning">বিপন্ন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At least</td><td class="meaning hidden-meaning">অন্তত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At sixes and sevens</td><td class="meaning hidden-meaning">এলোমেলো</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At all</td><td class="meaning hidden-meaning">মোটের উপর/আদৌ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Apple of discord</td><td class="meaning hidden-meaning">বিবাদের কারণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>As usual</td><td class="meaning hidden-meaning">সর্বদা যেমন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At large</td><td class="meaning hidden-meaning">মুক্তভাবে ঘোরাফেরা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At a stretch</td><td class="meaning hidden-meaning">একটানা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At random</td><td class="meaning hidden-meaning">এলোমেলোভাবে, উদ্দেশ্য বিহীনভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At the eleventh hour</td><td class="meaning hidden-meaning">শেষ মুহূর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>A bed of roses</td><td class="meaning hidden-meaning">সুখময় জীবন নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>A slow coach</td><td class="meaning hidden-meaning">ধীর গতির ব্যক্তি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>All along</td><td class="meaning hidden-meaning">শুরু থেকে শেষ পর্যন্ত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>A rainy day</td><td class="meaning hidden-meaning">দুর্দিনের জন্য সংরক্ষণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>A black sheep</td><td class="meaning hidden-meaning">কুলাঙ্গার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At length</td><td class="meaning hidden-meaning">অবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>A man of letters</td><td class="meaning hidden-meaning">পাণ্ডিত্যের মানুষ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At a glance</td><td class="meaning hidden-meaning">একনজরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>At the top of</td><td class="meaning hidden-meaning">সর্বোচ্চ কণ্ঠে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>All the same</td><td class="meaning hidden-meaning">তবুও একই কথা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>All and sundry</td><td class="meaning hidden-meaning">সবাই</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>As to</td><td class="meaning hidden-meaning">সম্পর্কে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>As well as</td><td class="meaning hidden-meaning">তেমনিভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>As soon as</td><td class="meaning hidden-meaning">যেমন দ্রুত সম্ভব</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>According to</td><td class="meaning hidden-meaning">অনুযায়ী</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                </tbody>
+            </table>
+
+                                                            <!-- B-H -->
+
+            <table class="table table-bordered table-striped bg-light">
+                <thead class="table-dark">
+                <tr>
+                    <th>Phrase</th>
+                    <th>Meaning</th>
+                    <th>Your Answer</th>
+                </tr>
+                </thead>
+                <tbody id="phrase-table">
+                        
+                    <tr><td>Bring to mind</td><td class="meaning hidden-meaning">স্মৃতিতে আনা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>By heart</td><td class="meaning hidden-meaning">মনে রাখা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>By turns</td><td class="meaning hidden-meaning">পরপর</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>By this time</td><td class="meaning hidden-meaning">এই সময়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Body and soul together</td><td class="meaning hidden-meaning">সম্পূর্ণ শরীর ও মন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Beyond measure</td><td class="meaning hidden-meaning">অপরিমেয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Beyond question</td><td class="meaning hidden-meaning">সন্দেহাতীত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Cock and bull story</td><td class="meaning hidden-meaning">মিথ্যা গল্প</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Cold reception</td><td class="meaning hidden-meaning">অন্তরিকতাহীন স্বাগত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Crying need</td><td class="meaning hidden-meaning">অত্যাবশ্যক প্রয়োজন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Capital punishment</td><td class="meaning hidden-meaning">মৃত্যুদণ্ড</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Crocodile tears</td><td class="meaning hidden-meaning">ভুয়া কান্না</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Call to mind</td><td class="meaning hidden-meaning">স্মরণ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Come to light</td><td class="meaning hidden-meaning">প্রকাশ পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Come of age</td><td class="meaning hidden-meaning">বয়ঃসন্ধিতে পৌঁছানো</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Call in question</td><td class="meaning hidden-meaning">প্রশ্ন করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Cats and dogs</td><td class="meaning hidden-meaning">ঝড়ো বৃষ্টি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Carry the day</td><td class="meaning hidden-meaning">জয়লাভ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Catch red handed</td><td class="meaning hidden-meaning">অপরাধের সময় ধরা পড়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Call names</td><td class="meaning hidden-meaning">অপমান করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Care for</td><td class="meaning hidden-meaning">যত্ন নেওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Cut off</td><td class="meaning hidden-meaning">কাটিয়ে ফেলা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Close to</td><td class="meaning hidden-meaning">নিকটবর্তী</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Carry on</td><td class="meaning hidden-meaning">চালিয়ে যাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Carry out</td><td class="meaning hidden-meaning">সম্পাদন করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Dead of night</td><td class="meaning hidden-meaning">রাত্রির নীরবতা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Dead language</td><td class="meaning hidden-meaning">মৃত ভাষা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Dead against</td><td class="meaning hidden-meaning">পুরোপুরি বিপরীত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Day after day</td><td class="meaning hidden-meaning">দিনদিন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Dead letter</td><td class="meaning hidden-meaning">অকার্যকর আইন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Dark horse</td><td class="meaning hidden-meaning">অজ্ঞাত প্রতিযোগী</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Double game</td><td class="meaning hidden-meaning">দ্বৈতচরিত্র</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>End in smoke</td><td class="meaning hidden-meaning">বাতিল হওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Every now and then</td><td class="meaning hidden-meaning">মাঝে মাঝে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Ever and anon</td><td class="meaning hidden-meaning">অবিরাম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>From A to Z</td><td class="meaning hidden-meaning">সম্পূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>From hand to mouth</td><td class="meaning hidden-meaning">কঠিন জীবনযাপন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>For good</td><td class="meaning hidden-meaning">চিরকালীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Far and wide</td><td class="meaning hidden-meaning">দেশব্যাপী</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Fish out of water</td><td class="meaning hidden-meaning">অস্বস্তিকর অবস্থা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Flesh and blood</td><td class="meaning hidden-meaning">কোন প্রাণিকেই এত অপমান সহ্য করা যায় না</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Far and near</td><td class="meaning hidden-meaning">দূর-দূরান্ত থেকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>From time to time</td><td class="meaning hidden-meaning">মাঝে মাঝে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>From bad to worse</td><td class="meaning hidden-meaning">খারাপ থেকে আরও খারাপ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Face to face</td><td class="meaning hidden-meaning">সরাসরি মুখোমুখি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Fair play</td><td class="meaning hidden-meaning">ন্যায্য খেলা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Find fault with</td><td class="meaning hidden-meaning">খুঁত খুঁজে পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>For the time being</td><td class="meaning hidden-meaning">আপাতত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>For the sake of</td><td class="meaning hidden-meaning">জন্যে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>For fear of</td><td class="meaning hidden-meaning">ভয়ের কারণে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>For want of</td><td class="meaning hidden-meaning">অভাবের কারণে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Feel at home</td><td class="meaning hidden-meaning">স্বাচ্ছন্দ্য বোধ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>For an instant</td><td class="meaning hidden-meaning">অল্প সময়ের জন্য</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>From top to bottom</td><td class="meaning hidden-meaning">গোটা ব্যাপারে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>From time immemorial</td><td class="meaning hidden-meaning">অতিপ্রাচীনকাল থেকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>Get rid of</td><td class="meaning hidden-meaning">মুক্তি পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Get by heart</td><td class="meaning hidden-meaning">মুখস্থ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Get out</td><td class="meaning hidden-meaning">বের হয়ে যাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Get back</td><td class="meaning hidden-meaning">ফিরে পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Give up</td><td class="meaning hidden-meaning">ত্যাগ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Go to the dogs</td><td class="meaning hidden-meaning">ধ্বংসের পথে যাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Go through</td><td class="meaning hidden-meaning">পরীক্ষা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>Hard and fast</td><td class="meaning hidden-meaning">কঠোর ও স্থির</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Heart and soul</td><td class="meaning hidden-meaning">সম্পূর্ণ মনোযোগ দিয়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Hard time</td><td class="meaning hidden-meaning">কঠিন সময়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Head and tail</td><td class="meaning hidden-meaning">শুরু থেকে শেষ পর্যন্ত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>High time</td><td class="meaning hidden-meaning">সময় এসেছে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Hale and healthy</td><td class="meaning hidden-meaning">সুস্থ ও সবল</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Hit upon</td><td class="meaning hidden-meaning">হঠাৎ কোনো আইডিয়া পাওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Hand in hand</td><td class="meaning hidden-meaning">হাত ধরাধরি করে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Hue and cry</td><td class="meaning hidden-meaning">তীব্র চিৎকার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    
+
+
+                </tbody>
+
+            </table>
+                                                            <!-- I-K -->
+            <table class="table table-bordered table-striped bg-light">
+                <thead class="table-dark">
+                <tr>
+                    <th>Phrase</th>
+                    <th>Meaning</th>
+                    <th>Your Answer</th>
+                </tr>
+                </thead>
+                <tbody id="phrase-table">
+                    <tr><td>In a body</td><td class="meaning hidden-meaning">সকলেই মিলে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In details</td><td class="meaning hidden-meaning">বিশদভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In case</td><td class="meaning hidden-meaning">যদি ঘটে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In lieu of</td><td class="meaning hidden-meaning">পরিবর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In a fix</td><td class="meaning hidden-meaning">সমস্যায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In respect of</td><td class="meaning hidden-meaning">সম্পর্কে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In good faith</td><td class="meaning hidden-meaning">বিশ্বাস করে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In the twinkling of an eye</td><td class="meaning hidden-meaning">এক পলকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In order to</td><td class="meaning hidden-meaning">জন্য</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>In the long run</td><td class="meaning hidden-meaning">দীর্ঘ সময় পরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Instead of</td><td class="meaning hidden-meaning">পরিবর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In vogue</td><td class="meaning hidden-meaning">প্রচলিত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In honour of</td><td class="meaning hidden-meaning">সম্মানে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In a word</td><td class="meaning hidden-meaning">সংক্ষেপে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In front of</td><td class="meaning hidden-meaning">সামনের দিকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In favour of</td><td class="meaning hidden-meaning">পক্ষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In full</td><td class="meaning hidden-meaning">সম্পূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In fine</td><td class="meaning hidden-meaning">সংক্ষেপে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In spite of</td><td class="meaning hidden-meaning">সত্ত্বেও</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In view of</td><td class="meaning hidden-meaning">বিবেচনায় নিয়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In the dark</td><td class="meaning hidden-meaning">অজ্ঞাত অবস্থায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In cold blood</td><td class="meaning hidden-meaning">ঠাণ্ডা মাথায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In no time</td><td class="meaning hidden-meaning">খুব দ্রুত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In a nutshell</td><td class="meaning hidden-meaning">সংক্ষিপ্তভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In a hurry</td><td class="meaning hidden-meaning">তাড়াতাড়ি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In the meantime</td><td class="meaning hidden-meaning">এদিকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Irony of fate</td><td class="meaning hidden-meaning">দুর্ভাগ্যের পরিহাস</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In broad day light</td><td class="meaning hidden-meaning">প্রকাশ্য দিবালোকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In full swing</td><td class="meaning hidden-meaning">পূর্ণ কার্যক্রমে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In the nick of time</td><td class="meaning hidden-meaning">সঠিক সময়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In behalf of</td><td class="meaning hidden-meaning">পরিবারের পক্ষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In connection with</td><td class="meaning hidden-meaning">সম্পর্কে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In the guise of</td><td class="meaning hidden-meaning">ছদ্মবেশে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In the hope of</td><td class="meaning hidden-meaning">আশায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In consequence of</td><td class="meaning hidden-meaning">ফলস্বরূপ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In quest of</td><td class="meaning hidden-meaning">অনুসন্ধানে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In consideration of</td><td class="meaning hidden-meaning">বিবেচনায় রেখে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In course of</td><td class="meaning hidden-meaning">সময়ের সাথে সাথে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In the end</td><td class="meaning hidden-meaning">অবশেষে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In harmony with</td><td class="meaning hidden-meaning">সামঞ্জস্যপূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Ins and outs</td><td class="meaning hidden-meaning">সম্পূর্ণ বিবরণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In season and out of season</td><td class="meaning hidden-meaning">সাময়িক ও অপ্রাসঙ্গিকভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In bloom</td><td class="meaning hidden-meaning">ফুল ফোটা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In capable of</td><td class="meaning hidden-meaning">অক্ষম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Incline to</td><td class="meaning hidden-meaning">প্রবণ হওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>In fact</td><td class="meaning hidden-meaning">বাস্তবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Insist on</td><td class="meaning hidden-meaning">দৃঢ়ভাবে দাবী করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>Jack of all trades</td><td class="meaning hidden-meaning">সকল কাজে দক্ষ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Jump to</td><td class="meaning hidden-meaning">দ্রুত সিদ্ধান্ত নেয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>Key to</td><td class="meaning hidden-meaning">সমাধানের চাবিকাঠি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Knock at</td><td class="meaning hidden-meaning">দরজায় কড়া নাড়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                </tbody>
+            </table>
+
+                                                            <!-- O-R -->
+
+            <table class="table table-bordered table-striped bg-light">
+                <thead class="table-dark">
+                <tr>
+                    <th>Phrase</th>
+                    <th>Meaning</th>
+                    <th>Your Answer</th>
+                </tr>
+                </thead>
+                <tbody id="phrase-table">
+                    <tr><td>Out of sorts</td><td class="meaning hidden-meaning">অসুস্থ বোধ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On the eve of</td><td class="meaning hidden-meaning">আগামীদিনের পূর্বে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On account of</td><td class="meaning hidden-meaning">কারণে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On the ground of</td><td class="meaning hidden-meaning">ভিত্তিতে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On an average</td><td class="meaning hidden-meaning">গড়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On the point of</td><td class="meaning hidden-meaning">সংশ্লিষ্ট</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On the contrary</td><td class="meaning hidden-meaning">পরিবর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On the whole</td><td class="meaning hidden-meaning">মোটকথা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On good terms</td><td class="meaning hidden-meaning">ভালো সম্পর্ক</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On no account</td><td class="meaning hidden-meaning">অবশ্যই নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>On the part of</td><td class="meaning hidden-meaning">দিক থেকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On a large scale</td><td class="meaning hidden-meaning">বড় পরিসরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On easy terms</td><td class="meaning hidden-meaning">সহজ শর্তে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On the other hand</td><td class="meaning hidden-meaning">অন্যদিকে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On the plea of</td><td class="meaning hidden-meaning">অজুহাতে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>On and on</td><td class="meaning hidden-meaning">অবিরাম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out and out</td><td class="meaning hidden-meaning">সম্পূর্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of work</td><td class="meaning hidden-meaning">বেকার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of employment</td><td class="meaning hidden-meaning">চাকরি হারানো</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of date</td><td class="meaning hidden-meaning">পুরানো</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>Out of fashion</td><td class="meaning hidden-meaning">আউটডেট</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of question</td><td class="meaning hidden-meaning">সম্ভব নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of order</td><td class="meaning hidden-meaning">অসাধু</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of doors</td><td class="meaning hidden-meaning">বাহিরে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of print</td><td class="meaning hidden-meaning">মুদ্রণ বন্ধ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Out of stock</td><td class="meaning hidden-meaning">মজুদ নেই</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Of course</td><td class="meaning hidden-meaning">অবশ্যই</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Of late</td><td class="meaning hidden-meaning">সম্প্রতি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Off and on</td><td class="meaning hidden-meaning">অনিয়মিতভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Off one's head</td><td class="meaning hidden-meaning">পাগল</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>Once upon a time</td><td class="meaning hidden-meaning">এক সময়ের কথা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Pros and cons</td><td class="meaning hidden-meaning">সুবিধা ও অসুবিধা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Part and parcel</td><td class="meaning hidden-meaning">অঙ্গাঙ্গী অংশ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Proud of</td><td class="meaning hidden-meaning">গর্বিত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Play false</td><td class="meaning hidden-meaning">মিথ্যা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Pick a quarrel with</td><td class="meaning hidden-meaning">বিবাদ সৃষ্টি করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Point blank</td><td class="meaning hidden-meaning">পরোক্ষভাবে নয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Play tricks</td><td class="meaning hidden-meaning">প্রতারণা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                    <tr><td>Red letter day</td><td class="meaning hidden-meaning">বিশেষ দিন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Rag day</td><td class="meaning hidden-meaning">শিক্ষার শেষ আনন্দের দিন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                    <tr><td>Red handed</td><td class="meaning hidden-meaning">সকলে হাতেনাতে</td><td><input type="text" class="form-control user-input" /></td></tr>
+
+                </tbody>
+            </table>
+
+
+                                                            <!-- S-W -->
+            <table class="table table-bordered table-striped bg-light">
+                <thead class="table-dark">
+                <tr>
+                    <th>Phrase</th>
+                    <th>Meaning</th>
+                    <th>Your Answer</th>
+                </tr>
+                </thead>
+                <tbody id="phrase-table">
+                <tr><td>Safe and sound</td><td class="meaning hidden-meaning">নিরাপদ ও অক্ষত</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Sum and substance</td><td class="meaning hidden-meaning">সারমর্ম</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Skin and bone</td><td class="meaning hidden-meaning">অতি রুগ্ণ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Short cut</td><td class="meaning hidden-meaning">সহজ উপায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Small fry</td><td class="meaning hidden-meaning">তুচ্ছ ব্যক্তি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Slow coach</td><td class="meaning hidden-meaning">ধীর ব্যক্তি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>So to say</td><td class="meaning hidden-meaning">এ যেন বলা যায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Stone's throw</td><td class="meaning hidden-meaning">খুব নিকটে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>So so / So and so</td><td class="meaning hidden-meaning">মোটামুটি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>So to speak</td><td class="meaning hidden-meaning">এ যেন বলা যায়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Such and such</td><td class="meaning hidden-meaning">এই জাতীয়</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Slow and steady</td><td class="meaning hidden-meaning">ধীরে কিন্তু স্থিরভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Step by step</td><td class="meaning hidden-meaning">ধাপে ধাপে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Summer friends</td><td class="meaning hidden-meaning">স্বার্থান্বেষী বন্ধু</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>A slip of the pen</td><td class="meaning hidden-meaning">কলমের ভুল</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>A slip of the tongue</td><td class="meaning hidden-meaning">কথার ভুল</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Take to heart</td><td class="meaning hidden-meaning">মনে গ্রহণ করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Take one to task</td><td class="meaning hidden-meaning">ভর্ৎসনা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Through and through</td><td class="meaning hidden-meaning">পুরোপুরি</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Thankless task</td><td class="meaning hidden-meaning">অকৃতজ্ঞ কাজ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Time and again</td><td class="meaning hidden-meaning">ঘন ঘন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>To the brim</td><td class="meaning hidden-meaning">চূড়ান্ত পর্যায়ে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>To the backbone</td><td class="meaning hidden-meaning">সম্পূর্ণভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>To and fro</td><td class="meaning hidden-meaning">এদিক ওদিক</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Take place</td><td class="meaning hidden-meaning">ঘটা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Take pity on</td><td class="meaning hidden-meaning">দয়া করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Take time</td><td class="meaning hidden-meaning">সময় লাগা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Take care of</td><td class="meaning hidden-meaning">যত্ন নেওয়া</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>The rest of</td><td class="meaning hidden-meaning">বাকি অংশ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Ups and downs</td><td class="meaning hidden-meaning">উত্থান-পতন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Under lock and key</td><td class="meaning hidden-meaning">তালাবদ্ধ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Up and down</td><td class="meaning hidden-meaning">উর্ধ্ব-নিম্নভাবে</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Up to date</td><td class="meaning hidden-meaning">আধুনিক</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Under consideration</td><td class="meaning hidden-meaning">বিবেচনাধীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Under construction</td><td class="meaning hidden-meaning">নির্মাণাধীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Under trial</td><td class="meaning hidden-meaning">বিচারাধীন</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Victim of</td><td class="meaning hidden-meaning">শিকার</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Vie with</td><td class="meaning hidden-meaning">প্রতিযোগিতা করা</td><td><input type="text" class="form-control user-input" /></td></tr>
+                <tr><td>Weal and woe</td><td class="meaning hidden-meaning">সুখ-দুঃখ</td><td><input type="text" class="form-control user-input" /></td></tr>
+                </tbody>
+            </table>
+>>>>>>> acc11b05321c69c1b4292dd1cb3380bd7d43eed3
+
+        </div>
+
+        <script src="./js/script.js"></script>
+    </body>
+
+</html>
